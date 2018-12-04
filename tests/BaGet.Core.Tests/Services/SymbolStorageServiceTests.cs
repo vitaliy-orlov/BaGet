@@ -3,7 +3,7 @@ using Xunit;
 
 namespace BaGet.Core.Tests.Services
 {
-    public class FileSymbolStorageServiceTests
+    public class SymbolStorageServiceTests
     {
         public class SavePortablePdbContentAsync
         {

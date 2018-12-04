@@ -25,8 +25,12 @@ namespace BaGet.Core.Services
             CancellationToken cancellationToken)
         {
             var path = GetPathForKey(filename, key);
+            var result = await _storage.PutAsync(path, pdbStream, PdbContentType, cancellationToken);
 
-            await _storage.PutAsync(path, pdbStream, PdbContentType, cancellationToken);
+            if (result == PutResult.Conflict)
+            {
+                throw new InvalidOperationException($"Could not save PDB {filename} {key} due to conflict");
+            }
         }
 
         public async Task<Stream> GetPortablePdbContentStreamOrNullAsync(string filename, string key)
