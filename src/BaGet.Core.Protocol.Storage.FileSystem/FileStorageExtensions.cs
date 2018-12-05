@@ -7,7 +7,7 @@ namespace BaGet.Core.Protocol
 {
     public static class FileStorageExtensions
     {
-        public static IServiceCollection AddFileSystemStorage(this IServiceCollection services, string path)
+        public static IServiceCollection AddBaGetFileSystemStorage(this IServiceCollection services, string path)
         {
             if (services == null)
             {

@@ -9,7 +9,7 @@ namespace BaGet.Core.Protocol.Repository.PostgreSQL
 {
     public static class RepositoryExtensions
     {
-        public static IServiceCollection AddFileSystemStorage(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddBaGetRepositories(this IServiceCollection services, string connectionString)
         {
             if (services == null)
             {
